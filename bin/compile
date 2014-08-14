@@ -41,9 +41,9 @@ cd $BUILD_DIR
 # Unpack cache
 for DIR in $PLAY_PATH $IVY_PATH ; do
   rm -rf $DIR
-  if [ -d $CACHE_DIR/$DIR ]; then
+  #if [ -d $CACHE_DIR/$DIR ]; then
     #cp -r $CACHE_DIR/$DIR $DIR
-  fi
+  #fi
 done
 
 PLAY_VERSION=$(get_play_version conf/dependencies.yml)
