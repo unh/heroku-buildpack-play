@@ -42,7 +42,7 @@ cd $BUILD_DIR
 for DIR in $PLAY_PATH $IVY_PATH ; do
   rm -rf $DIR
   if [ -d $CACHE_DIR/$DIR ]; then
-    cp -r $CACHE_DIR/$DIR $DIR
+    #cp -r $CACHE_DIR/$DIR $DIR
   fi
 done
 
@@ -68,7 +68,7 @@ else
   fi
 fi
 
-PLAY_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-play/ivysettings.xml"
+#PLAY_SETTINGS_URL="http://s3.amazonaws.com/heroku-jvm-langpack-play/ivysettings.xml"
 
 # echo -n "-----> Installing ivysettings.xml....."
 # if [ -f .ivy2/ivysettings.xml ]; then
