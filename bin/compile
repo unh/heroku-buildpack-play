@@ -17,8 +17,8 @@ export_env_dir $ENV_DIR
 mkdir -p $CACHE_DIR
 
 # install JDK
-statusn "Installing JDK..."
-install_java $CACHE_DIR $BUILD_DIR
+echo "Installing JDK..."
+install_oracle_java $CACHE_DIR $BUILD_DIR
 echo " version $(java_version) installed"
 
 PLAY_PATH=".play"
