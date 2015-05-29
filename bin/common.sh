@@ -40,7 +40,7 @@ install_play()
   PLAY_URL="https://s3.amazonaws.com/heroku-jvm-langpack-play/play-heroku-$VER_TO_INSTALL.tar.gz"
   PLAY_TAR_FILE="play-heroku.tar.gz"
   echo "-----> Installing Play! $VER_TO_INSTALL....."
-  curl --silent --location $PLAY_URL -o $PLAY_TAR_FILE
+  curl --location $PLAY_URL -o $PLAY_TAR_FILE
   if [ ! -f $PLAY_TAR_FILE ]; then
     echo "-----> Error downloading Play! framework. Please try again..."
     exit 1
@@ -69,7 +69,7 @@ install_oracle_java() {
   if [ ! -f "${cache_dir}/.jdk/bin/java" ] || [ "${jdk_ver}" != "$(java_version ${cache_dir}/.jdk/bin/)" ] ; then
     echo -n " (downloading...)"
     rm -rf "${cache_dir}/.jdk" && mkdir -p "${cache_dir}/.jdk"
-    curl -s -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" "${jdk_url}" | tar xz -C "${cache_dir}/.jdk" --strip-components=1
+    curl -j -k -L -H "Cookie: oraclelicense=accept-securebackup-cookie" "${jdk_url}" | tar xz -C "${cache_dir}/.jdk" --strip-components=1
     rm -rf "${cache_dir}/.jdk/src.zip" "${cache_dir}/.jdk/javafx-src.zip" "${cache_dir}/.jdk/db" "${cache_dir}/.jdk/man"
   fi
   cp -r "${cache_dir}/.jdk/." "${build_dir}/.jdk"
